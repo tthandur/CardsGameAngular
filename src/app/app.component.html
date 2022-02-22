@@ -1,0 +1,123 @@
+<div style="background-color: #64aad8;">
+  <div style="background-color: azure; padding-left: 40%; padding-bottom: 10px;">
+    <h1>Rummy Cards Sorting</h1>
+  </div>
+  <br><br><br>
+<div>
+  <table width = "100%">
+    <tr>
+      <td>  <img src="/assets/images/special.png" alt="image" width="200px" height="300px"> </td>
+      <td>  <img src="/assets/images/diamonds.png" alt="image" width="200px" height="300px"></td>
+      <td> <img src="/assets/images/spades.png" alt="image" width="200px" height="300px"></td>
+      <td> <img src="/assets/images/clubs.png" alt="image" width="200px" height="300px"></td>
+      <td> <img src="/assets/images/hearts.png" alt="image" width="200px" height="300px"></td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <h3>Select Special cards</h3>
+          <div>
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)]="selectedspecialcards">
+                <option *ngFor="let number of specialcards" [value]="number.value" [disabled]="input.includes(number.value)">{{number.viewValue}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="addselectedspecialcards()">Add</button>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div>
+          <h3>Select Diamonds</h3>
+          <div>
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)]="selecteddiamond">
+                <option *ngFor="let number of diamonds" [value]="number.value" [disabled]="input.includes(number.value)">{{number.viewValue}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="addselecteddiamond()">Add</button>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div>
+          <h3>Select Spades</h3>
+          <div>
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)]="selectedspade">
+                <option *ngFor="let number of spades" [value]="number.value" [disabled]="input.includes(number.value)">{{number.viewValue}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="addselectedspade()">Add</button>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div>
+          <h3>Select Clubs</h3>
+          <div>
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)]="selectedclub">
+                <option *ngFor="let number of clubs" [value]="number.value" [disabled]="input.includes(number.value)">{{number.viewValue}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="addselectedclub()">Add</button>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div>
+          <h3>Select Hearts</h3>
+          <div>
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)]="selectedheart">
+                <option *ngFor="let number of hearts" [value]="number.value" [disabled]="input.includes(number.value)">{{number.viewValue}}</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="addselectedheart()" >Add</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<br><br><br>
+<table>
+  <tr>
+    <td>
+      <div>
+        <mat-label style="padding-left: 10px; font-weight: bold;">Input</mat-label>
+        <mat-form-field class="example-full-width" appearance="fill" readonly>
+          <input matInput [(ngModel)]="input" [disabled]="true">
+        </mat-form-field>
+      </div>
+    </td>
+    <td>
+      <div style="padding-left: 300px;">
+        <button mat-raised-button type="submit" name="submit" (click)="onSubmit()">Submit</button>
+      </div>
+    </td>
+    <td>
+      <div>
+        <mat-label style="padding-left: 300px; font-weight: bold;">Output</mat-label>
+        <mat-form-field class="example-full-width" appearance="fill" readonly>
+          <input matInput [(ngModel)]="output" [disabled]="true">
+        </mat-form-field>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
